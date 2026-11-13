@@ -1,0 +1,11 @@
+body[deep-nav-tree-hideheadbar] div.chatContent > div:first-child{
+  display: none;
+}
+body[deep-nav-tree-hidespeakbox] #chat-message-input-all{
+  display: none;
+}
+
+.catalogeu-navigation-plugin-floatbar{
+  position: absolute !important;
+  z-index: 50;
+}

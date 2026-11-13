@@ -1,0 +1,15 @@
+body[deep-nav-tree-hideheadbar] div.flow-web-root-outlet main div[class^="container-"] > div[class^="header-"]{
+  display: none;
+}
+body[deep-nav-tree-hidespeakbox] div.flow-web-root-outlet main div[class^="container-"] > div[class^="footer-"]{
+  display: none;
+}
+body[deep-nav-tree-wide] [deep-nav-tree-articles] > div > div > div{
+  padding: 0 1em;
+}
+
+[processed="reply"][collapsed] div.recommend-prompt-list,
+[processed="user"][collapsed] div[data-testid="ref-content-wrapper"],
+[processed="user"][collapsed] div[data-thinking-box="content"]{
+  display: none;
+}

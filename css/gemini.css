@@ -1,0 +1,16 @@
+/* 展开消息内容宽度 */
+body[deep-nav-tree-wide] [deep-nav-tree-articles] > div,
+body[deep-nav-tree-wide] [deep-nav-tree-articles] > div user-query{
+  max-width: none !important;
+}
+
+/* 隐藏/显示 左/上/下时 */
+body[deep-nav-tree-hideheadbar] .desktop-ogb-buffer,
+body[deep-nav-tree-hideheadbar] top-bar-actions,
+body[deep-nav-tree-hideheadbar] [data-ogsr-up],
+body[deep-nav-tree-hideheadbar] [data-test-id="bard-mode-menu-button"]{
+  display: none !important;
+}
+body[deep-nav-tree-hidespeakbox] input-container{
+  display: none !important;
+}

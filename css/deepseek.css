@@ -1,0 +1,22 @@
+body[deep-nav-tree-hideheadbar] [deep-nav-tree-top] {
+  display: none;
+}
+
+body[deep-nav-tree-hidespeakbox] [deep-nav-tree-bottom] {
+  display: none;
+}
+
+body[deep-nav-tree-wide] [deep-nav-tree-articles] {
+  max-width: none;
+}
+
+/* [deep-nav-tree-articles] > *{
+  padding-left: 0 !important;
+} */
+
+/* pin */
+@media screen {
+  html>body[catalogeu-navigation-plugin-floatbar-panel-pin] #root>.ds-theme>div:first-child {
+    right: var(--floatbar-min-width-screen) !important;
+  }
+}

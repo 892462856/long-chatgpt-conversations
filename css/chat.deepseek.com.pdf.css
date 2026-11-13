@@ -1,0 +1,18 @@
+@media print {
+  html[we2d0-print-pdf] [deep-nav-tree-articles]>[processed]{
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: none !important;
+  }
+
+  html[we2d0-print-pdf] .md-code-block-banner-wrap,
+  html[we2d0-print-pdf] .md-code-block-banner,
+  html[we2d0-print-pdf] .md-code-block-banner-lite,
+  html[we2d0-print-pdf] [role="button"],
+  html[we2d0-print-pdf] .ds-button,
+  /*html[we2d0-print-pdf]  .ds-flex, */
+  html[we2d0-print-pdf] button {
+    display: none !important;
+  }
+}

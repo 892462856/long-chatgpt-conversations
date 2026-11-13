@@ -1,0 +1,149 @@
+{
+  "name": {
+    "message": "Long ChatGPT Conversations(300+): Outline · Navigation · Bookmarks · Export"
+  },
+  "title": {
+    "message": "Outline"
+  },
+  "description": {
+    "message": "Turn long ChatGPT chats into a clickable map — jump anywhere, save bookmarks, and export your conversations."
+  },
+  "emptyNotice": {
+    "message": "No chat messages?"
+  },
+  "catalogTitle": {
+    "message": "Hold to move\nClick to fix tree menu"
+  },
+  "moveTitle": {
+    "message": "Hold to move"
+  },
+  "partialTitle": {
+    "message": "Full screen for selected area"
+  },
+  "foldTitle": {
+    "message": "Fold/Expand All"
+  },
+  "depthTitle": {
+    "message": "Simplified Tree"
+  },
+  "refreshTitle": {
+    "message": "Refresh Outline Tree"
+  },
+  "deepTitle": {
+    "message": "Depth Analysis"
+  },
+  "closeTitle": {
+    "message": "Close Directory Tree View"
+  },
+  "refreshAlert": {
+    "message": "Replying, please refresh later"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "gpsTitle": {
+    "message": "Current Position"
+  },
+  "resizeWidthTitle": {
+    "message": "Resize"
+  },
+  "resizeMaxHeightTitle": {
+    "message": "Resize maximum height"
+  },
+  "scrollOptimization": {
+    "message": "Scroll Optimization"
+  },
+  "scrollOptimizationContent": {
+    "message": "1.When the outline area doesn't need to scroll, the wheel operation automatically affects the chat area.<br>1.Shift + Scroll: The outline area is prevented from scrolling, and scrolling affects the chat area.<br><b>Try scrolling the wheel</b> without moving the mouse to the chat area."
+  },
+  "download": {
+    "message": "Download"
+  },
+  "checkAll": {
+    "message": "Check all"
+  },
+  "chatItems": {
+    "message": "Chat items"
+  },
+  "pdfGeneratingTitle": {
+    "message": "PDF is being generated..."
+  },
+  "pdfGeneratingNotice": {
+    "message": "Do not close the prompt at the top of the page!"
+  },
+  "pdfGenerationFailed": {
+    "message": "PDF generation failed"
+  },
+  "search": {
+    "message": "Search"
+  },
+  "toggleTree": {
+    "message": "Toggle tree"
+  },
+  "toggleSubtree": {
+    "message": "Toggle subtree"
+  },
+  "scrollHeading": {
+    "message": "Scroll heading"
+  },
+  "scrollPrompt": {
+    "message": "Scroll prompt"
+  },
+  "scrollToFirstPrompt": {
+    "message": "Scroll to the first prompt"
+  },
+  "scrollToLastPrompt": {
+    "message": "Scroll to the last prompt"
+  },
+  "scrollScreen": {
+    "message": "Scroll the screen"
+  },
+  "togglePanel": {
+    "message": "Toggle panel"
+  },
+  "customizedShortcutKeys": {
+    "message": "Customized shortcut keys"
+  },
+  "explain": {
+    "message": "explain"
+  },
+  "shortcutTipTitle": {
+    "message": "Tip:"
+  },
+  "shortcutTip1": {
+    "message": "Shortcut keys can only be a single <b>letter or number</b>, <b>can be modified</b>, and can be enabled/disabled."
+  },
+  "shortcutTip2": {
+    "message": "When the cursor is in an input field, single-key shortcuts <b>do not work</b> (to avoid interfering with user input)."
+  },
+  "shortcutTip3": {
+    "message": "When the cursor is in an input field, <b>Alt+letter or number</b> shortcuts still work."
+  },
+  "readMode": {
+    "message": "Read mode"
+  },
+  "toggleDepth": {
+    "message": "Toggle tree depth"
+  },
+  "toggleNavigationAction": {
+    "message": "Navigation action: Click/Hover"
+  },
+  "capture": {
+    "message": "Click and drag to zoom"
+  },
+  "zoomPageTitle": {
+    "message": "Page zoom:"
+  },
+  "zoomPageContent": {
+    "message": "Ctrl+Scroll Wheel"
+  },
+  "getFullVersion": {
+    "message": "Get full version"
+  },
+  "getFullVersionTitle": {
+    "message": "Get the full version on the Chrome Web Store"
+  },
+  "starTitle": {
+    "message": "Show bookmarks only"
+  }
+}

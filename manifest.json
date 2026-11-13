@@ -1,0 +1,245 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_name__",
+  "version": "2.5.0",
+  "description": "__MSG_description__",
+  "homepage_url": "https://chromewebstore.google.com/detail/long-chatgpt-conversation/fklppbegohaleadmomfgjgpcighjheba",
+  "icons": {
+    "16": "images/icons/logo.png",
+    "32": "images/icons/logo.png",
+    "48": "images/icons/logo.png",
+    "64": "images/icons/logo.png",
+    "128": "images/icons/logo.png"
+  },
+  "default_locale": "en",
+  "permissions": [
+    "storage",
+    "debugger"
+  ],
+  "host_permissions": [
+    "https://yuanbao.tencent.com/",
+    "https://chatgpt.com/",
+    "https://www.chatgpt.com/",
+    "https://gemini.google.com/",
+    "https://chat.deepseek.com/",
+    "https://chat.qwen.ai/",
+    "https://www.doubao.com/",
+    "https://www.kimi.com/"
+  ],
+  "action": {},
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "content_scripts": [
+    {
+      "css": [
+        "css/styles.css",
+        "css/pin.css",
+        "css/article-collapsed.css",
+        "css/print.css",
+        "css/yuanbao.css"
+      ],
+      "js": [
+        "librarys/turndown.js",
+        "librarys/turndown-plugin-gfm.cjs.js",
+        "js/tools.js",
+        "js/bookmarks.js",
+        "js/fullscreen.js",
+        "js/treeCreatorBase.js",
+        "js/articles.js",
+        "js/floater.js",
+        "js/content-base.js",
+        "js/yuanbao/treeCreator.js",
+        "js/navTree.js",
+        "js/yuanbao/content.js"
+      ],
+      "matches": [
+        "https://yuanbao.tencent.com/*"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "css": [
+        "css/styles.css",
+        "css/pin.css",
+        "css/article-collapsed.css",
+        "css/print.css",
+        "css/gemini.css",
+        "css/gemini.google.com.pdf.css"
+      ],
+      "js": [
+        "librarys/turndown.js",
+        "librarys/turndown-plugin-gfm.cjs.js",
+        "js/tools.js",
+        "js/bookmarks.js",
+        "js/fullscreen.js",
+        "js/treeCreatorBase.js",
+        "js/articles.js",
+        "js/floater.js",
+        "js/content-base.js",
+        "js/gemini/treeCreator.js",
+        "js/navTree.js",
+        "js/gemini/content.js"
+      ],
+      "matches": [
+        "https://gemini.google.com/*"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "css": [
+        "css/styles.css",
+        "css/pin.css",
+        "css/article-collapsed.css",
+        "css/print.css",
+        "css/chatgpt.css"
+      ],
+      "js": [
+        "librarys/turndown.js",
+        "librarys/turndown-plugin-gfm.cjs.js",
+        "js/tools.js",
+        "js/bookmarks.js",
+        "js/fullscreen.js",
+        "js/treeCreatorBase.js",
+        "js/articles.js",
+        "js/floater.js",
+        "js/content-base.js",
+        "js/chatgpt/treeCreator.js",
+        "js/navTree.js",
+        "js/chatgpt/content.js"
+      ],
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://www.chatgpt.com/*"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "css": [
+        "css/styles.css",
+        "css/pin.css",
+        "css/article-collapsed.css",
+        "css/print.css",
+        "css/deepseek.css"
+      ],
+      "js": [
+        "librarys/turndown.js",
+        "librarys/turndown-plugin-gfm.cjs.js",
+        "js/tools.js",
+        "js/bookmarks.js",
+        "js/fullscreen.js",
+        "js/treeCreatorBase.js",
+        "js/articles.js",
+        "js/floater.js",
+        "js/content-base.js",
+        "js/deepseek/treeCreator.js",
+        "js/navTree.js",
+        "js/deepseek/content.js"
+      ],
+      "matches": [
+        "https://chat.deepseek.com/*"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "css": [
+        "css/styles.css",
+        "css/pin.css",
+        "css/article-collapsed.css",
+        "css/print.css",
+        "css/doubao.css"
+      ],
+      "js": [
+        "librarys/turndown.js",
+        "librarys/turndown-plugin-gfm.cjs.js",
+        "js/tools.js",
+        "js/bookmarks.js",
+        "js/fullscreen.js",
+        "js/treeCreatorBase.js",
+        "js/articles.js",
+        "js/floater.js",
+        "js/content-base.js",
+        "js/doubao/treeCreator.js",
+        "js/navTree.js",
+        "js/doubao/content.js"
+      ],
+      "matches": [
+        "https://www.doubao.com/*"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "css": [
+        "css/styles.css",
+        "css/pin.css",
+        "css/article-collapsed.css",
+        "css/print.css",
+        "css/kimi.css"
+      ],
+      "js": [
+        "librarys/turndown.js",
+        "librarys/turndown-plugin-gfm.cjs.js",
+        "js/tools.js",
+        "js/bookmarks.js",
+        "js/fullscreen.js",
+        "js/treeCreatorBase.js",
+        "js/articles.js",
+        "js/floater.js",
+        "js/content-base.js",
+        "js/kimi/treeCreator.js",
+        "js/navTree.js",
+        "js/kimi/content.js"
+      ],
+      "matches": [
+        "https://www.kimi.com/*"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "css": [
+        "css/styles.css",
+        "css/pin.css",
+        "css/article-collapsed.css",
+        "css/print.css",
+        "css/qwen.css"
+      ],
+      "js": [
+        "librarys/turndown.js",
+        "librarys/turndown-plugin-gfm.cjs.js",
+        "js/tools.js",
+        "js/bookmarks.js",
+        "js/fullscreen.js",
+        "js/treeCreatorBase.js",
+        "js/articles.js",
+        "js/floater.js",
+        "js/content-base.js",
+        "js/qwen/treeCreator.js",
+        "js/navTree.js",
+        "js/qwen/content.js"
+      ],
+      "matches": [
+        "https://chat.qwen.ai/*"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/*",
+        "resources/*",
+        "css/*"
+      ],
+      "matches": [
+        "https://yuanbao.tencent.com/*",
+        "https://gemini.google.com/*",
+        "https://chatgpt.com/*",
+        "https://www.chatgpt.com/*",
+        "https://chat.deepseek.com/*",
+        "https://chat.qwen.ai/*",
+        "https://www.doubao.com/*",
+        "https://www.kimi.com/*"
+      ]
+    }
+  ]
+}

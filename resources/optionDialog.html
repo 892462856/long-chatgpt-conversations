@@ -1,0 +1,342 @@
+<div class="chatgpt-message-tree-option-dialog">
+  <style>
+    @scope(.chatgpt-message-tree-option-dialog) {
+      :scope {
+        /* 变量与 css/login.css 对齐 */
+        --primary-color: #3bb910;
+        --primary-dark: #5d6902;
+        --text-color: #2D3748;
+        --light-text: #718096;
+        --border-color: #E2E8F0;
+        --bg-color: #FFFFFF;
+        --card-bg: #F7FAFC;
+        --focus-ring: rgba(59, 185, 16, 0.1);
+
+        font-family: ui-sans-serif, -apple-system, system-ui, Segoe UI, Helvetica, Apple Color Emoji, Arial, sans-serif, Segoe UI Emoji, Segoe UI Symbol;
+        color: var(--text-color);
+      }
+
+      :scope * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      input[type="checkbox"] {
+        appearance: auto !important;
+      }
+
+      :scope input,
+      :scope button {
+        font-family: inherit;
+      }
+
+      :scope button {
+        padding: .3em 1em;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 500;
+        transition: all 0.2s;
+      }
+
+      .modal {
+        position: fixed;
+        z-index: 10000000;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+
+        user-select: none;
+      }
+
+      .modal-content {
+        background: var(--bg-color);
+        padding: 1.3em 2.5em;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        color: var(--text-color);
+        min-width: 400px;
+        max-width: min(520px, calc(100vw - 32px));
+      }
+
+      .modal-name {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .modal-name>span {
+        font-weight: 500;
+        font-size: 14px;
+        color: var(--text-color);
+        white-space: nowrap;
+      }
+
+      .modal-name>input.file-name {
+        flex: 1;
+        min-width: 0;
+        padding: .25em 1em;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        font-size: 14px;
+        background: var(--card-bg);
+        color: var(--text-color);
+        transition: all 0.2s;
+      }
+
+      .modal-name>input.file-name:focus,
+      .modal-name>input.file-name:focus-visible {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 2px var(--focus-ring);
+      }
+
+      .modal-header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+
+        margin-bottom: 12px;
+        font-weight: 500;
+        font-size: 14px;
+        color: var(--text-color);
+      }
+
+      /* 格式由JS动态生成，数量不定（chatgpt 5个 / gemini 2个），需要能换行 */
+      .format {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 6px;
+      }
+
+      .format>label {
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 12px;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        font-size: 13px;
+        line-height: 1.4;
+        color: var(--light-text);
+        background: var(--bg-color);
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .format>label:hover {
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+      }
+
+      .format>label>input[type="radio"] {
+        display: none;
+      }
+
+      .format>label:has(input:checked) {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+        color: var(--bg-color);
+      }
+
+      .item-list {
+        max-height: 300px;
+        overflow-y: auto;
+        /* padding: 6px; */
+        border-radius: 1px;
+        margin: 2em auto;
+        outline: 1px solid var(--border-color);
+        outline-offset: 1em;
+      }
+
+      .item {
+        /* padding: 8px 10px; */
+        border-radius: 6px;
+        cursor: pointer;
+        color: var(--text-color);
+        transition: background 0.2s;
+      }
+
+      .item:hover {
+        background: var(--card-bg);
+      }
+
+      .item>label {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        cursor: pointer;
+        color: var(--text-color);
+      }
+
+      .item>label>input[type="checkbox"] {
+        margin-right: 8px;
+        flex-shrink: 0;
+        accent-color: var(--primary-color);
+        box-shadow: none !important;
+      }
+
+      .item>label>input[type="text"] {
+        flex: 1;
+        min-width: 0;
+        padding: .25em 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        border: 1px solid transparent;
+        border-radius: 6px;
+        font-size: 14px;
+        color: var(--text-color);
+        background: transparent;
+        transition: all 0.2s;
+      }
+
+      .item>label>input[type="text"]:hover {
+        border-color: var(--border-color);
+        background: var(--bg-color);
+      }
+
+      .item>label>input[type="text"]:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        background: var(--bg-color);
+        box-shadow: 0 0 0 2px var(--focus-ring);
+      }
+
+      .item>label>input[type="checkbox"]:not(:checked)+input {
+        pointer-events: none;
+      }
+
+      .modal-footer {
+        display: flex;
+        gap: 12px;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      .select-all {
+        display: flex;
+        align-items: center;
+      }
+
+      .select-all .item {
+        padding: 0;
+        border: none;
+        white-space: nowrap;
+        background: transparent;
+        color: var(--text-color);
+      }
+
+      .select-all .item:hover {
+        background: transparent;
+        color: var(--primary-color);
+      }
+
+      .select-all input[type="checkbox"] {
+        margin-right: 5px;
+        accent-color: var(--primary-color);
+        box-shadow: none !important;
+      }
+
+      .btn-success {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+        color: var(--bg-color);
+      }
+
+      .btn-success:hover {
+        background: var(--primary-dark);
+        border-color: var(--primary-dark);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        border-color: var(--border-color);
+        color: var(--text-color);
+      }
+
+      .btn-secondary:hover {
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+      }
+
+      @media (max-width: 480px) {
+        .modal-content {
+          min-width: 0;
+          margin: 10px;
+          padding: 20px 16px;
+        }
+      }
+
+      /* 深色模式 */
+      @media (prefers-color-scheme: dark) {
+        :scope {
+          --primary-color: #6ee7b7;
+          --primary-dark: #cbfae4;
+          --text-color: #E2E8F0;
+          --light-text: #A0AEC0;
+          --border-color: #16305e;
+          --bg-color: #111111;
+          --card-bg: #1f2735;
+          --focus-ring: rgba(110, 231, 183, 0.15);
+        }
+      }
+    }
+  </style>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-name">
+        <span>File Name</span>
+        <input class="file-name" type="text">
+      </div>
+
+      <div class="modal-header">
+        <span data-i18n="chatItems">Chat items</span>
+        <div class="format">
+          <label>
+            <input type="radio" name="file-type" value="md" checked>md
+          </label>
+          <label>
+            <input type="radio" name="file-type" value="pdf">pdf
+          </label>
+        </div>
+      </div>
+
+      <div class="item-list" id="itemList">
+        <!-- 动态生成项目 -->
+        <div class="item">
+          <label>
+            <input type="checkbox" class="item-checkbox">
+            <input type="text" value="name">
+          </label>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div class="select-all">
+          <label class="item">
+            <input type="checkbox" id="selectAllCheckbox">
+            <span data-i18n="checkAll">Check all</span>
+          </label>
+        </div>
+        <div style="flex: 1;"></div>
+        <button class="btn-success" data-i18n="download">Download</button>
+        <button class="btn-secondary" data-i18n="cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

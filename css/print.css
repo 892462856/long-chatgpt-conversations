@@ -1,0 +1,66 @@
+h1[we2d0-print-pdf-nav] {
+  display: none;
+}
+
+@media print {
+  html[we2d0-print-pdf] *:not(:has([deep-nav-tree-articles])):not([deep-nav-tree-articles]):not([deep-nav-tree-articles] *) {
+    display: none !important;
+  }
+
+  html[we2d0-print-pdf]>body *:has(* > [deep-nav-tree-articles]) {
+    display: contents;
+  }
+
+  html[we2d0-print-pdf],
+  html[we2d0-print-pdf] body,
+  html[we2d0-print-pdf] [deep-nav-tree-articles] {
+    max-height: none !important;
+    height: auto !important;
+  }
+
+  html[we2d0-print-pdf] h1[we2d0-print-pdf-nav] {
+    display: block;
+    line-height: 0;
+    height: .5em;
+    overflow: hidden;
+    opacity: 0.02;
+  }
+
+  /* html[we2d0-print-pdf] [processed]:not([we2d0-print-pdf-yes]) {
+    display: none;
+  } */
+
+  html[we2d0-print-pdf] [deep-nav-tree-articles]>*:not([we2d0-print-pdf-yes]) {
+    display: none;
+  }
+
+  html[we2d0-print-pdf] [deep-nav-tree-articles] > [processed]{
+    max-width: none !important;
+  }
+
+  /* star */
+  html[we2d0-print-pdf] h1:not([star-selected])::before,
+  html[we2d0-print-pdf] h2:not([star-selected])::before,
+  html[we2d0-print-pdf] h3:not([star-selected])::before,
+  html[we2d0-print-pdf] h4:not([star-selected])::before,
+  html[we2d0-print-pdf] h5:not([star-selected])::before,
+  html[we2d0-print-pdf] h6:not([star-selected])::before {
+    display: none !important;
+  }
+
+  /* 测试用 */
+  /* html[we2d0-print-pdf] button[we2d0-show-btn]{
+    border: 1px solid #000 !important;
+  } */
+
+  /* 代替：html[we2d0-print-pdf] button:not(:has(img|video)) */
+  html[we2d0-print-pdf] button:not([we2d0-show-btn]) {
+    display: none !important;
+  }
+
+  /* html[we2d0-print-pdf] button, */
+  /* html[we2d0-print-pdf] button:not(:has(img)),
+  html[we2d0-print-pdf] button:not(:has(video)) {
+    display: none !important;
+  } 不知道为什么，就是不行，所以加标志：[we2d0-show-btn]*/
+}

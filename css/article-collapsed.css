@@ -1,0 +1,118 @@
+/* article 折叠的样式 */
+[processed="reply"][collapsed] [deep-nav-tree-answer-markdown]>*:not(:first-child),
+[processed="reply"][collapsed] [deep-nav-tree-answer-markdown-other]>* {
+  display: none;
+}
+
+[processed="reply"][collapsed] [deep-nav-tree-answer-markdown]>*:first-child,
+[processed="user"][collapsed] [deep-nav-tree-user-content],
+[processed="reply"][collapsed] [deep-nav-tree-answer-markdown-other] {
+  line-height: 2em;
+  max-height: 2.5em !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  opacity: 0.8;
+
+  cursor: pointer;
+}
+
+[processed="reply"][collapsed] [deep-nav-tree-answer-markdown]>*:first-child>*,
+[processed="user"][collapsed] [deep-nav-tree-user-content]>* {
+  pointer-events: none !important;
+}
+
+[processed="user"][collapsed] [deep-nav-tree-user-content] {
+  opacity: 1;
+}
+
+[processed="reply"][collapsed] [deep-nav-tree-answer-markdown]>*:first-child::before,
+[processed="user"][collapsed] [deep-nav-tree-user-content]::before,
+[processed="reply"][collapsed] [deep-nav-tree-answer-markdown-other]::before {
+  margin-right: .3em;
+  content: " ";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: var(--x123aas-background-image-close);
+}
+
+[processed="reply"][collapsed] [deep-nav-tree-answer-markdown]>*:first-child:hover {
+  opacity: 1;
+}
+
+/* [processed="reply"][collapsed] [deep-nav-tree-answer-markdown] > *:first-child:hover::before,
+[processed="user"][collapsed] [deep-nav-tree-user-content]:hover::before,
+[processed="reply"][collapsed] [deep-nav-tree-answer-markdown-other]:hover::before {
+  background-image: var(--x123aas-background-image-close);
+} */
+
+[processed="reply"][collapsed] [deep-nav-tree-answer-markdown-other]::before {
+  content: "[Non-text]";
+  line-height: 1em;
+  text-indent: 1.5em;
+}
+
+[processed="reply"][collapsed] [deep-nav-tree-answer-markdown-other="image"]::before {
+  content: "[Image]";
+}
+
+[processed="reply"][collapsed] [deep-nav-tree-answer-markdown-other="video"]::before {
+  content: "[Video]";
+}
+
+[processed="reply"][collapsed] [deep-nav-tree-answer-markdown-other="read"]::before {
+  content: "[Read]";
+}
+
+[processed="reply"][collapsed] [deep-nav-tree-answer-markdown-other="entry"]::before {
+  content: "[Entry]";
+}
+
+/* star收藏按钮 */
+[processed="reply"] [f-n-t="common"] {
+  position: relative;
+}
+
+/* [processed="reply"] [f-n-t="common"] * {
+  pointer-events: none;
+} */
+
+[processed="reply"] [f-n-t="common"]::before {
+  /* content: '✮'; */
+  content: '';
+  display: inline-block;
+  background-image: var(--x123aas-background-image-star-empty);
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  filter: grayscale(1);
+  opacity: .5;
+
+  position: absolute;
+
+  width: 1em;
+  height: 1em;
+  left: -1.2em;
+  top: .25em;
+}
+
+/* 禁止显示 AI回答标题左侧的星星 */
+body:not([enable-star]) [processed="reply"] [f-n-t="common"]::before{
+  display: none !important;
+}
+
+[processed="reply"] [f-n-t="common"]:hover::before {
+  filter: none;
+  opacity: 1;
+  scale: 1.1;
+}
+
+[processed="reply"] [f-n-t="common"][star-selected]::before {
+  background-image: var(--x123aas-background-image-star-fill);
+  filter: none;
+  opacity: 1;
+}

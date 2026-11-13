@@ -1,0 +1,26 @@
+/* [deep-nav-tree-articles] {
+  max-width: none !important;
+} */
+
+div[data-testid="message_action_bar"],
+div[data-testid="suggest_message_list"],
+div[data-testid="suggest_message_item"],
+div[data-testid$="-btn"],
+div[data-testid="collapse_button"],
+div[class^="action-"],
+button{
+  display: none !important;
+}
+
+html,body{
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  /* scrollbar-color: #00000090 transparent; */
+  scrollbar-color: #77777790 transparent;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  html,body{
+    scrollbar-color: #77777790 transparent;
+  }
+} */

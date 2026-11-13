@@ -1,0 +1,19 @@
+html,body{
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+html{
+  scrollbar-width: thin !important;
+}
+body{
+  height: auto !important;
+}
+
+.user-message-menu,
+.message-footer,
+.recommend-prompt-wrap,
+.pc-search-container,
+button{
+  display: none !important;
+}
+

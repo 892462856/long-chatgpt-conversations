@@ -1,0 +1,13 @@
+body[deep-nav-tree-hideheadbar] div.chat-header{
+  display: none;
+}
+body[deep-nav-tree-hidespeakbox] div.chat-action{
+  display: none;
+}
+body[deep-nav-tree-wide] [deep-nav-tree-articles]{
+  max-width: none;
+}
+
+[processed="reply"][collapsed] div.recommend-prompt-list{
+  display: none;
+}

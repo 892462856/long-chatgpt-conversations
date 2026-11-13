@@ -1,0 +1,149 @@
+{
+  "name": {
+    "message": "ChatGPT 长聊天（300+）：大纲 · 导航 · 书签 · 导出"
+  },
+  "title": {
+    "message": "大纲"
+  },
+  "description": {
+    "message": "把超长 ChatGPT 对话变成可点击的地图——想跳哪就跳哪，还能收藏和导出。"
+  },
+  "emptyNotice": {
+    "message": "没有聊天消息？"
+  },
+  "catalogTitle": {
+    "message": "按住以移动\n点击以固定树形菜单"
+  },
+  "moveTitle": {
+    "message": "按住以移动"
+  },
+  "partialTitle": {
+    "message": "所选区域全屏显示"
+  },
+  "foldTitle": {
+    "message": "全部折叠/展开"
+  },
+  "depthTitle": {
+    "message": "树形展开深度。"
+  },
+  "refreshTitle": {
+    "message": "刷新大纲树"
+  },
+  "deepTitle": {
+    "message": "深度分析"
+  },
+  "closeTitle": {
+    "message": "关闭目录树视图"
+  },
+  "refreshAlert": {
+    "message": "正在回复，请稍后再刷新"
+  },
+  "cancel": {
+    "message": "取消"
+  },
+  "gpsTitle": {
+    "message": "当前位置"
+  },
+  "resizeWidthTitle": {
+    "message": "调整大小"
+  },
+  "resizeMaxHeightTitle": {
+    "message": "调整最大高度"
+  },
+  "scrollOptimization": {
+    "message": "滚动优化"
+  },
+  "scrollOptimizationContent": {
+    "message": "1.当大纲区域不需要滚动时，滚轮操作会自动影响对话区域。<br>1.Shift + 滚动：大纲区域受到滚动保护，滚动会影响对话区域。<br><b>尝试滚动滚轮</b>而不将鼠标移到对话区域。"
+  },
+  "download": {
+    "message": "下载"
+  },
+  "checkAll": {
+    "message": "全选"
+  },
+  "chatItems": {
+    "message": "聊天项目"
+  },
+  "pdfGeneratingTitle": {
+    "message": "正在生成 PDF..."
+  },
+  "pdfGeneratingNotice": {
+    "message": "请勿关闭页面顶部的提示！"
+  },
+  "pdfGenerationFailed": {
+    "message": "PDF 生成失败"
+  },
+  "search": {
+    "message": "搜索"
+  },
+  "toggleTree": {
+    "message": "切换树状图"
+  },
+  "toggleSubtree": {
+    "message": "切换子树"
+  },
+  "scrollHeading": {
+    "message": "滚动标题"
+  },
+  "scrollPrompt": {
+    "message": "滚动提示"
+  },
+  "scrollToFirstPrompt": {
+    "message": "滚动到第一个提示"
+  },
+  "scrollToLastPrompt": {
+    "message": "滚动到最后一个提示"
+  },
+  "scrollScreen": {
+    "message": "滚动屏幕"
+  },
+  "togglePanel": {
+    "message": "切换面板"
+  },
+  "customizedShortcutKeys": {
+    "message": "自定义快捷键"
+  },
+  "explain": {
+    "message": "解释"
+  },
+  "shortcutTipTitle": {
+    "message": "Tip:"
+  },
+  "shortcutTip1": {
+    "message": "快捷键 只能填单个 <b>字母或数字</b>，<b>可以修改</b>，可以禁用/启用。"
+  },
+  "shortcutTip2": {
+    "message": "如果光标在输入框中，快捷键单个按键<b>不起作用</b>（禁止妨碍用户输入）。"
+  },
+  "shortcutTip3": {
+    "message": "如果光标在输入框中，<b>Alt+数字或字母</b>，快捷键依然有效。"
+  },
+  "readMode": {
+    "message": "阅读模式"
+  },
+  "toggleDepth": {
+    "message": "切换树深度"
+  },
+  "toggleNavigationAction": {
+    "message": "导航动作：点击/悬停"
+  },
+  "capture": {
+    "message": "点击并拖拽以放大"
+  },
+  "zoomPageTitle": {
+    "message": "页面缩放："
+  },
+  "zoomPageContent": {
+    "message": "Ctrl+鼠标滚轮"
+  },
+  "getFullVersion": {
+    "message": "获取完整版"
+  },
+  "getFullVersionTitle": {
+    "message": "在 Chrome 应用商店获取完整版"
+  },
+  "starTitle": {
+    "message": "只看书签"
+  }
+}

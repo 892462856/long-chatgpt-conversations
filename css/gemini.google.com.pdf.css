@@ -1,0 +1,9 @@
+/* @media print {
+  html[we2d0-print-pdf] [processed="reply"]:not(model-response) {
+    display: none;
+  }
+
+  html[we2d0-print-pdf] button {
+    display: none !important;
+  }
+} */
