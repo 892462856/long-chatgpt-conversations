@@ -44,6 +44,35 @@ substantially, the HTML parsing logic in the same file may also need to be adjus
 The fastest way to find the problem is to open the affected chat page, inspect its current
 DOM in DevTools, and compare it with the selectors used in the source.
 
+## FAQ
+
+**Why is there no cloud sync or account?**
+This edition has no server and no account system. Bookmarks and all other state are stored in
+`chrome.storage.local` on the current browser profile, so they do not sync across devices.
+Cloud bookmark sync is part of the official release.
+
+**Why does the official release have more features?**
+The official release adds cloud sync, tags, a mind map, and more export formats (HTML, JSON,
+EPUB). This repository deliberately keeps only features that run entirely in the browser;
+anything that needs a server or an account stays out.
+
+**Why is ChatGPT support the most complete in the official release?**
+ChatGPT changes its page structure more often than the other supported sites, so keeping it
+working takes the most effort. New platform support and fixes go into the official release
+first; this build may lag behind, or stop working until the selectors here are updated.
+
+**Where are bookmarks stored? Is anything uploaded?**
+Bookmarks are stored per conversation in `chrome.storage.local`, keyed by site and chat ID.
+The extension makes no network requests: the only `fetch` calls load its own packaged HTML
+files, and PDF export is generated locally. Clearing the extension's data or uninstalling
+removes the bookmarks.
+
+**A site stopped working. What should I do?**
+In most cases the platform changed its DOM and the selectors need updating — see
+[Keeping this source build working](#keeping-this-source-build-working). If you need a
+working version right now, install the
+[official release](https://chromewebstore.google.com/detail/long-chatgpt-conversation/fklppbegohaleadmomfgjgpcighjheba).
+
 ## Features
 
 - **Outline tree** for long conversations — every prompt and every branch is a node.
