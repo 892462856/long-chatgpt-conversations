@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Official release (Chrome Web Store)
+    url: https://chromewebstore.google.com/detail/long-chatgpt-conversation/fklppbegohaleadmomfgjgpcighjheba
+    about: The latest working version with the most complete feature set. Try this first.
+  - name: How to fix a broken selector
+    url: https://github.com/892462856/long-chatgpt-conversations#keeping-this-source-build-working
+    about: What to check when a platform changes its page structure.

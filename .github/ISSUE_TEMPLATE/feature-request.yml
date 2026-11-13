@@ -1,0 +1,42 @@
+name: Feature request
+description: Suggest an improvement or a new feature.
+title: "[Feature] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This open-source edition is **not actively maintained**, and it intentionally has
+        **no backend**. Features that need a server, an account or payment belong in the
+        official release instead.
+
+        中文用户可以直接用中文填写。
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you trying to solve? / 你想解决什么问题？
+      description: Describe the use case, not just the feature. / 请描述使用场景，而不只是功能名称。
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution / 建议的方案
+  - type: dropdown
+    id: backend
+    attributes:
+      label: Does it need a backend? / 是否需要后端？
+      options:
+        - No — it can work fully in the browser / 不需要，可以完全在浏览器内实现
+        - Yes — it needs a server or account / 需要服务器或账号
+        - Not sure / 不确定
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered / 考虑过的替代方案
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context / 补充信息
+      description: Screenshots, links, examples. / 截图、链接、示例。

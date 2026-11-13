@@ -1,0 +1,85 @@
+name: Platform stopped working
+description: The outline is missing or parses incorrectly after a site update.
+title: "[Platform] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This project is **not actively maintained**, so a fix may take a long time.
+        If you need a working version right now, install the
+        [official release](https://chromewebstore.google.com/detail/long-chatgpt-conversation/fklppbegohaleadmomfgjgpcighjheba).
+
+        中文用户可以直接用中文填写。
+  - type: dropdown
+    id: site
+    attributes:
+      label: Platform / 平台
+      options:
+        - ChatGPT
+        - Gemini
+        - DeepSeek
+        - Doubao
+        - Kimi
+        - Qwen
+        - Tencent Yuanbao
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Conversation URL / 对话链接
+      description: Remove anything private before posting. / 发布前请去掉隐私内容。
+      placeholder: https://...
+  - type: dropdown
+    id: area
+    attributes:
+      label: What is broken? / 哪里不正常？
+      options:
+        - The outline tree is empty / 大纲为空
+        - Wrong nodes, titles or hierarchy / 节点、标题或层级错误
+        - Jumping goes to the wrong place / 跳转位置错误
+        - Bookmarks are not restored / 书签无法恢复
+        - The panel does not appear / 面板不显示
+        - Export fails / 导出失败
+        - Other / 其他
+    validations:
+      required: true
+  - type: textarea
+    id: symptom
+    attributes:
+      label: Details / 具体现象
+      description: What did you expect, and what happened instead? / 你期望什么，实际发生了什么？
+    validations:
+      required: true
+  - type: textarea
+    id: dom
+    attributes:
+      label: Current page structure (optional) / 当前页面结构（可选）
+      description: |
+        This is the most useful information for fixing a platform change.
+        In DevTools, inspect one message and the chat scroll container, then copy their
+        outer HTML here. / 在 DevTools 中查看一条消息和聊天滚动容器，复制它们的 outer HTML。
+      render: html
+  - type: input
+    id: version
+    attributes:
+      label: Extension version / 扩展版本
+      description: See manifest.json or chrome://extensions. / 见 manifest.json 或 chrome://extensions。
+      placeholder: "2.5.0"
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version / 浏览器与版本
+      placeholder: Chrome 131 / Edge 131
+  - type: textarea
+    id: console
+    attributes:
+      label: Console errors / 控制台报错
+      description: DevTools → Console, paste any red errors. / 打开 DevTools → Console，粘贴红色报错。
+      render: shell
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / 截图
+      description: Drag and drop images here. / 可直接拖入图片。

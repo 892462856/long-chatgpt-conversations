@@ -1,0 +1,71 @@
+name: Bug report
+description: Something is broken, but the platform page itself looks normal.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This project is **not actively maintained**, so a reply may take a long time.
+
+        中文用户可以直接用中文填写。
+  - type: dropdown
+    id: site
+    attributes:
+      label: Platform / 平台
+      options:
+        - ChatGPT
+        - Gemini
+        - DeepSeek
+        - Doubao
+        - Kimi
+        - Qwen
+        - Tencent Yuanbao
+        - Not platform-specific / 与平台无关
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Conversation URL / 对话链接
+      description: Remove anything private before posting. / 发布前请去掉隐私内容。
+      placeholder: https://...
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened? / 发生了什么？
+      description: What did you do, and what went wrong? / 你做了什么，哪里出错？
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect? / 你期望的结果？
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce / 复现步骤
+      placeholder: |
+        1. Open ...
+        2. Click ...
+        3. ...
+  - type: input
+    id: version
+    attributes:
+      label: Extension version / 扩展版本
+      placeholder: "2.5.0"
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version / 浏览器与版本
+      placeholder: Chrome 131 / Edge 131
+  - type: textarea
+    id: console
+    attributes:
+      label: Console errors / 控制台报错
+      description: DevTools → Console, paste any red errors. / 打开 DevTools → Console，粘贴红色报错。
+      render: shell
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / 截图
+      description: Drag and drop images here. / 可直接拖入图片。
