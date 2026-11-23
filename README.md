@@ -15,7 +15,7 @@ that turns long AI chats into a clickable, navigable tree.
 > **Official release on the Chrome Web Store:**
 > <https://chromewebstore.google.com/detail/long-chatgpt-conversation/fklppbegohaleadmomfgjgpcighjheba>
 >
-> The full version adds cloud bookmark sync, tags, a mind map, and other features. This
+> The full version adds cloud bookmark sync, tags, and other features. This
 > open-source edition keeps the local outline, navigation, local bookmarks and export, and
 > has **no backend, no account, and no tracking**.
 
@@ -52,7 +52,7 @@ This edition has no server and no account system. Bookmarks and all other state 
 Cloud bookmark sync is part of the official release.
 
 **Why does the official release have more features?**
-The official release adds cloud sync, tags, a mind map, and more export formats (HTML, JSON,
+The official release adds cloud sync, tags, and more export formats (HTML, JSON,
 EPUB). This repository deliberately keeps only features that run entirely in the browser;
 anything that needs a server or an account stays out.
 
